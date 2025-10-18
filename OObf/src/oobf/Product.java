@@ -2,6 +2,7 @@ package oobf;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import static oobf.VALIDATION.validQuantity;
 
 public class Product {
 
@@ -24,25 +25,13 @@ public class Product {
         this.manufacturerName = manufacturerName;
         this.supplierName = supplierName;
 
-        if (quantity < 0) {
-                        this.quantity = 0;
-
-            System.out.println(" Quantity cannot be negative Default value (0) used");
-        } else {
-            this.quantity = quantity;
-        }
+        this.quantity = quantity;
 
         this.category = category;
 
-        if (price <= 0) {
-            this.price = 1;
-            System.out.println(" Invalid price! Default value (1) used.");
-        } else {
-            this.price = price;
-        }
+        this.price = price;
+
     }
-    
-   
 
     public int getQuantity() {
         return quantity;
@@ -119,9 +108,9 @@ public class Product {
     }
 
     public float totalValueInStock() {
-        System.out.println("totalValueInStock: " + price * quantity  );
-    float y = price * quantity ; 
-    return y ; 
+        System.out.println("totalValueInStock: " + price * quantity);
+        float y = price * quantity;
+        return y;
     }
 
     public boolean sellQuantity(int amount) {
@@ -158,7 +147,5 @@ public class Product {
         }
         return true;
     }
-    
-
 
 }
